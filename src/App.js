@@ -6,8 +6,8 @@ import ProductTable from './components/ProductTable';
 
 const initialData = [
   { "CompanyName": "apple", "ProductName": ["Mac air M1", "Mac M1 Pro", "air pod", "mac 1"] },
-  { "CompanyName": "samsung", "ProductName": ["Galaxy S23", "Galaxy A53", "Galaxy A34"] },
-  { "CompanyName": "Google", "ProductName": ["Google Pixel 4", "Google Glass", "Google A!"] }
+  { "CompanyName": "samsung", "ProductName": ["Galaxy S23", "Galaxy A53", "Galaxy A34", "Samsung A2"] },
+  { "CompanyName": "Google", "ProductName": ["Google Pixel 4", "Google Glass", "Google A!", "Google Pixel"] }
 ];
 
 function App() {
