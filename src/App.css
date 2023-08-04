@@ -41,20 +41,23 @@ tr {
 
 .btn-primary {
   margin: 4px;
-  --bs-btn-bg: #522e08;
-  -bs-btn-border-color: #dc8b35;
+  padding: 4px;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #C6D2E7;
+  --bs-btn-border-color: #c8d1de;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #0b5ed7;
   --bs-btn-hover-border-color: #0a58ca;
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #0a58ca;
-  --bs-btn-active-border-color: #dc8b35;
+  --bs-btn-active-bg: #5e9af4;
+  --bs-btn-active-border-color: #637899;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #0d6efd;
-  --bs-btn-disabled-border-color:
+  --bs-btn-disabled-border-color: #0d6efd;
 }
+
 
 td {
   margin: 20px;

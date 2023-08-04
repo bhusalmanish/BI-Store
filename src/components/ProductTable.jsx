@@ -50,6 +50,7 @@ const ProductTable = ({ Data }) => {
                             <tr key={productIndex}>
                                 <td>Product {productIndex + 1}</td>
                                 {Data.map((company, companyIndex) => hasDataInColumn[companyIndex] && (
+
                                     <td key={companyIndex}>
                                         {editable.companyIndex === companyIndex && editable.productIndex === productIndex ? (
                                             <input
@@ -64,14 +65,17 @@ const ProductTable = ({ Data }) => {
                                             editable.companyIndex === companyIndex && editable.productIndex === productIndex ? (
                                                 <Button onClick={() => setEditable({ companyIndex: null, productIndex: null })}> <AiOutlineCheck /> </Button>
                                             ) : (
-                                                <>
+                                                <>    <span>
                                                     <Button onClick={() => handleEditProduct(companyIndex, productIndex)}> <AiFillEdit /> </Button>
                                                     <Button onClick={() => handleDeleteProduct(companyIndex, productIndex)}> <AiFillDelete /> </Button>
+                                                </span>
                                                 </>
                                             )
                                         )}
                                     </td>
+
                                 ))}
+
                             </tr>
                         ))}
                     </tbody>

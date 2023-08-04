@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { Container, Form } from 'react-bootstrap';
 import ProductForm from './components/ProductForm';
@@ -32,30 +32,29 @@ function App() {
   };
 
   const searchFiltered = () => {
-    const filteredData = Data?.map((company) => ({
+    return Data.map((company) => ({
       ...company,
-      ProductName: company?.ProductName?.filter((product) =>
+      ProductName: (company.ProductName || []).filter((product) =>
         product.toLowerCase().includes(searchQuery.toLowerCase())
       ),
     })).filter((company) => company.ProductName.length > 0);
-
-
-    return (
-      <div>
-        <Container>
-          <h1>BI : Store</h1>
-          <Form.Group>
-            <Form.Control type="text" placeholder="Search Product" value={searchQuery} onChange={handleSearch} />
-          </Form.Group>
-          <ProductForm Data={Data} onUpdateData={handleUpdateData} />
-          <ProductTable Data={filteredData} />
-
-        </Container>
-      </div>
-    );
   };
 
-  return searchFiltered();
+  const filteredData = searchFiltered();
+
+  return (
+    <div>
+      <Container>
+        <h1>BI : Store</h1>
+        <Form.Group>
+          <Form.Control type="text" placeholder="Search Product" value={searchQuery} onChange={handleSearch} />
+        </Form.Group>
+        <ProductForm Data={Data} onUpdateData={handleUpdateData} />
+        <ProductTable Data={filteredData} />
+
+      </Container>
+    </div>
+  );
 }
 
 export default App;
